@@ -1,10 +1,15 @@
-const express = require('express');
-const path = require('path');
-const morgan = require('morgan')
+import express from 'express';
+import { join } from 'path';
+import morgan from 'morgan';
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 
-app.use('/', express.static(path.join(__dirname, '/')));
+app.use('/', express.static(join(__dirname, '/')));
 app.use(morgan('dev'))
 
 app.get('/', (req, res) => {
@@ -15,7 +20,7 @@ app.get('/hello', (req, res) => {
     res.send("Hello!")
 })
 
-port = 80
+let port = 80
 
 try {
     app.listen(port, () => {
