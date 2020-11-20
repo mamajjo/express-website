@@ -9,16 +9,12 @@ const __dirname = dirname(__filename);
 
 const app = express();
 
-app.use('/', express.static(join(__dirname, '/')));
+app.use(express.static('public'));
 app.use(morgan('dev'))
 
 app.get('/', (req, res) => {
-    res.sendFile('./app/index.html', { root: __dirname });
+    res.sendFile('./index.html', { root: __dirname });
 });
-
-app.get('/hello', (req, res) => {
-    res.send("Hello!")
-})
 
 let port = 80
 

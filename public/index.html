@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./app/style/style.css">
-    <script type="text/javascript" src="./app/js/listbox.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
     <title>Generuj SMS</title>
 </head>
 <body>
@@ -21,7 +20,7 @@
             <textarea class="textbox form_elem page-elem" name="pin" form="sms_data" placeholder="Tutaj wstaw piny"></textarea>
         </div>
         <div class="container submit page-elem">
-            <button class="generate" type="submit">Generuj!</button>
+            <button class="generate" type="submit" onclick="submitForm()">Generuj!</button>
         </div>
         <div class="message-box page-elem">
             <div class="message-box-content page-elem">
@@ -30,7 +29,8 @@
         </div>
     </div>
 </body>
-<script>
-    generateDBoptions(dict);
+<script type="module">
+    import {generateDBoptions, dict} from "./js/listbox.js"
+    generateDBoptions(dict)
 </script>
 </html>
