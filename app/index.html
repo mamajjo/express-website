@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./app/style/style.css">
+    <script type="text/javascript" src="./app/js/listbox.js"></script>
+    <title>Generuj SMS</title>
+</head>
+<body>
+    <div class="fixed-header">
+        <div class="header-container">
+            <h1>Generuj szybko arkusz sms!</h1>
+        </div>
+    </div>
+    <div class="page">
+        <div class="form container page-elem">
+            <select class="form_elem list page-elem" name="db_to_use" id="db" size="10">
+            </select>
+            <textarea class="textbox form_elem page-elem" name="wizyty" form="sms_data" placeholder="Tutaj wstaw wizyty"></textarea>
+            <textarea class="textbox form_elem page-elem" name="pin" form="sms_data" placeholder="Tutaj wstaw piny"></textarea>
+        </div>
+        <div class="container submit page-elem">
+            <button class="generate" type="submit">Generuj!</button>
+        </div>
+        <div class="message-box page-elem">
+            <div class="message-box-content page-elem">
+                witam
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    generateDBoptions(dict);
+</script>
+</html>
