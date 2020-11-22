@@ -1,17 +1,22 @@
-export const dict = ["pin_1", "pin_2", "pin_3", "pin_4"];
-
 const formElem = document.querySelector("form");
 
-export async function generateDBoptions(dbSources) {
+export async function loadDbHistory(dbSources) {
   let selectableList = document.getElementById("db");
-  setTimeout(() => {
-    dbSources.forEach((element) => {
-      let option = document.createElement("option");
-      option.appendChild(document.createTextNode(element));
-      option.value = element;
-      selectableList.appendChild(option);
-    });
-  }, 2000);
+  let xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      dbSources = JSON.parse(this.response);
+      for (let key of Object.keys(dbSources)) {
+        let option = document.createElement("option");
+        option.appendChild(document.createTextNode(key.toString()));
+        option.value = dbSources[key];
+        selectableList.appendChild(option);
+      }
+    }
+  };
+  xhttp.open("GET", "http://0.0.0.0:5000/dbs", true);
+  xhttp.setRequestHeader("Content-type", "application/json");
+  xhttp.send();
 }
 
 const submitFrom = (event) => {

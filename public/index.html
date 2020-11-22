@@ -16,7 +16,7 @@
         <div class="container">
             <form id="smsData" class="form">
                 <div class="form container page-elem">
-                    <select class="form_elem list page-elem" name="db_to_use" id="db" size="10">
+                    <select class="form_elem list page-elem" name="dbPath" id="db" size="10">
                     </select>
                     <textarea class="textbox form_elem page-elem" name="wizyty" form="smsData" placeholder="Tutaj wstaw wizyty"></textarea>
                     <textarea class="textbox form_elem page-elem" name="pin" form="smsData" placeholder="Tutaj wstaw piny"></textarea>
@@ -34,7 +34,7 @@
     </div>
   </body>
   <script type="module">
-      import { generateDBoptions, dict} from "./js/listbox.js";
-      generateDBoptions(dict);
+      import { loadDbHistory} from "./js/listbox.js";
+      loadDbHistory();
     </script>
 </html>
