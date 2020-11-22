@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./style/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./style/style.css" />
     <title>Generuj SMS</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="fixed-header">
-        <div class="header-container">
-            <h1>Generuj szybko arkusz sms!</h1>
-        </div>
+      <div class="header-container">
+        <h1>Generuj szybko arkusz sms!</h1>
+      </div>
     </div>
     <div class="page">
-        <div class="form container page-elem">
-            <select class="form_elem list page-elem" name="db_to_use" id="db" size="10">
-            </select>
-            <textarea class="textbox form_elem page-elem" name="wizyty" form="sms_data" placeholder="Tutaj wstaw wizyty"></textarea>
-            <textarea class="textbox form_elem page-elem" name="pin" form="sms_data" placeholder="Tutaj wstaw piny"></textarea>
+        <div class="container">
+            <form id="smsData" class="form">
+                <div class="form container page-elem">
+                    <select class="form_elem list page-elem" name="db_to_use" id="db" size="10">
+                    </select>
+                    <textarea class="textbox form_elem page-elem" name="wizyty" form="smsData" placeholder="Tutaj wstaw wizyty"></textarea>
+                    <textarea class="textbox form_elem page-elem" name="pin" form="smsData" placeholder="Tutaj wstaw piny"></textarea>
+                    <div class="container submit page-elem">
+                        <input type="submit" id="submitButton" class="generate" value="Generuj!"/>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="container submit page-elem">
-            <button class="generate" type="submit" onclick="submitForm()">Generuj!</button>
+      <div class="message-box page-elem">
+        <div class="message-box-content page-elem">
+          witam
         </div>
-        <div class="message-box page-elem">
-            <div class="message-box-content page-elem">
-                witam
-            </div>
-        </div>
+      </div>
     </div>
-</body>
-<script type="module">
-    import {generateDBoptions, dict} from "./js/listbox.js"
-    generateDBoptions(dict)
-</script>
+  </body>
+  <script type="module">
+      import { generateDBoptions, dict} from "./js/listbox.js";
+      generateDBoptions(dict);
+    </script>
 </html>
