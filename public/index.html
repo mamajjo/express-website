@@ -15,62 +15,75 @@
     <div class="page">
       <form id="smsData" class="form">
         <div class="container">
-          <div class="form container page-elem">
+          <div class="form container form-elem card">
             <div class="wizard">
+              <div class="large-number">
+                1
+              </div>
               <p>
-                wybierz dzień wystawienia recept
+                Wybierz dzień <strong>wystawienia</strong> e-recept
               </p>
             </div>
             <select
-              class="form_elem list page-elem"
+              class="form_elem list form-elem"
               name="dbPath"
               id="db"
               size="10"
+              required
             >
             </select>
           </div>
         </div>
         <div class="container">
-          <div class="form container page-elem">
+          <div class="form container form-elem card">
             <div class="wizard">
+              <div class="large-number">
+                2
+              </div>
               <p>
-                wprowadź dane wizyt
+                Wprowadź dane <strong>wizyt</strong>
               </p>
             </div>
             <textarea
-              class="textbox form_elem page-elem"
+              class="textbox form_elem form-elem"
               name="wizyty"
               form="smsData"
               placeholder="Tutaj wstaw wizyty"
+              required
             ></textarea>
           </div>
         </div>
         <div class="container">
-          <div class="form container page-elem">
+          <div class="form container form-elem card">
             <div class="wizard">
+              <div class="large-number">
+                3
+              </div>
               <p>
-                wprowadź dane z pinami
+                Wprowadź dane z <strong>pinami</strong>
               </p>
             </div>
             <textarea
-              class="textbox form_elem page-elem"
+              class="textbox form_elem form-elem"
               name="pin"
               form="smsData"
               placeholder="Tutaj wstaw piny"
+              required
             ></textarea>
-            <div class="container submit page-elem">
+            <div class="container submit form-elem">
               <input
                 type="submit"
                 id="submitButton"
                 class="generate"
                 value="Generuj!"
+                required
               />
             </div>
           </div>
         </div>
       </form>
-      <div class="message-box page-elem">
-        <div class="message-box-content page-elem">
+      <div class="card form-elem">
+        <div class="message-box-content">
           witam
         </div>
       </div>
