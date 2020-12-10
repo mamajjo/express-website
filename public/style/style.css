@@ -5,7 +5,7 @@
 body {
   padding-top: 60px;
   padding-bottom: 40px;
-  background-color: #F2F5FB;
+  background-color: #191C20;
   font-family: "Lucida Console", "Courier New", monospace;
 }
 
@@ -31,11 +31,13 @@ body {
 textarea.textbox {
   width: 70%;
   border: 3px solid #cccccc;
+  background-color: #1E2127;
   padding: 5px;
   font-family: Tahoma, sans-serif;
   background-position: bottom right;
   background-repeat: no-repeat;
   font-size: x-small;
+  color: white;
 }
 
 .form {
@@ -58,6 +60,8 @@ textarea.textbox {
 .list {
   width: 70%;
   font-size: large;
+  color: whitesmoke;
+  background-color: #1E2127;
 }
 
 select.list:invalid {
@@ -93,17 +97,18 @@ button.generate {
   border-style: solid;
   border-width: 3px;
   border-radius: 10px;
-  background-color: white;
+  background-color: #1E2127;
 }
 
 .card {
-  background-color: rgb(255, 255, 255);
+  background-color: #313337;
   border-radius: 10px;
   margin: 10px;
 }
 
 .message-box-content {
   padding: 10px;
+  color: whitesmoke;
 }
 
 .wizard {
@@ -111,12 +116,13 @@ button.generate {
   flex-direction: column;
   width: 20%;
   justify-content: center;
+  color: whitesmoke;
 }
 
 .alert {
   padding: 20px;
   background-color: #f44336;
-  color: white;
+  color: whitesmoke;
   opacity: 1;
   transition: opacity 0.6s;
   margin-bottom: 15px;
@@ -136,7 +142,7 @@ button.generate {
 
 .closebtn {
   margin-left: 15px;
-  color: white;
+  color: whitesmoke;
   font-weight: bold;
   float: right;
   font-size: 22px;
@@ -146,7 +152,7 @@ button.generate {
 }
 
 .closebtn:hover {
-  color: black;
+  color: whitesmoke;
 }
 
 .large-number {
@@ -166,7 +172,7 @@ input[type=submit] {
   background-color: #cccccc;
   border-radius: 10px;
   padding: 16px 32px;
-  color: white;
+  color: whitesmoke;
   margin: 4px 2px;
   cursor: pointer;
   font-size: medium;

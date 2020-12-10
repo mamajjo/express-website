@@ -14,7 +14,7 @@ export async function loadDbHistory(dbSources) {
       }
     }
   };
-  xhttp.open("GET", "http://0.0.0.0:5000/dbs", true);
+  xhttp.open("GET", "http://10.0.12.71:5000/dbs", true);
   xhttp.setRequestHeader("Content-type", "application/json");
   xhttp.send();
 }
@@ -31,14 +31,33 @@ formElem.addEventListener("formdata", (e) => {
   for (var [key, value] of data.entries()) {
     body[key] = value;
   }
-  console.log(body);
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       alert(this.responseText);
+      let message_box = document.getElementsByClassName("message-box-content")[0];
+      let textContent = JSON.parse(this.response);
+      message_box.innerHTML = ""
+      let hasErrors = false
+      for(const line of textContent['response']) {
+        if(line['type'] == "error") {
+          hasErrors = true
+        }
+        message_box.innerHTML += line['message'] + "\n";
+      }
+      if (hasErrors) {
+        changeBoxColor(message_box, "red")
+      }
+      else {
+        changeBoxColor(message_box, "green");
+      }
     }
   };
-  xhttp.open("POST", "http://0.0.0.0:5000/xls", true);
+  xhttp.open("POST", "http://10.0.12.71:5000/xls", true);
   xhttp.setRequestHeader("Content-type", "application/json");
   xhttp.send(JSON.stringify(body));
 });
+
+function changeBoxColor(element, color) {
+  element.style.backgroundColor = color;
+}
